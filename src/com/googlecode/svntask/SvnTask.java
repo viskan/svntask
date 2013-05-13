@@ -3,6 +3,15 @@ package com.googlecode.svntask;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.Task;
+import org.tmatesoft.svn.core.auth.ISVNAuthenticationManager;
+import org.tmatesoft.svn.core.internal.io.dav.DAVRepositoryFactory;
+import org.tmatesoft.svn.core.internal.io.fs.FSRepositoryFactory;
+import org.tmatesoft.svn.core.internal.io.svn.SVNRepositoryFactoryImpl;
+import org.tmatesoft.svn.core.wc.SVNClientManager;
+import org.tmatesoft.svn.core.wc.SVNWCUtil;
+
 import com.googlecode.svntask.command.Add;
 import com.googlecode.svntask.command.Checkout;
 import com.googlecode.svntask.command.Cleanup;
@@ -13,18 +22,11 @@ import com.googlecode.svntask.command.Info;
 import com.googlecode.svntask.command.Log;
 import com.googlecode.svntask.command.Ls;
 import com.googlecode.svntask.command.MkDir;
+import com.googlecode.svntask.command.RecursiveStatus;
 import com.googlecode.svntask.command.Status;
 import com.googlecode.svntask.command.Switch;
 import com.googlecode.svntask.command.Unlock;
 import com.googlecode.svntask.command.Update;
-import org.apache.tools.ant.BuildException;
-import org.apache.tools.ant.Task;
-import org.tmatesoft.svn.core.auth.ISVNAuthenticationManager;
-import org.tmatesoft.svn.core.internal.io.dav.DAVRepositoryFactory;
-import org.tmatesoft.svn.core.internal.io.fs.FSRepositoryFactory;
-import org.tmatesoft.svn.core.internal.io.svn.SVNRepositoryFactoryImpl;
-import org.tmatesoft.svn.core.wc.SVNClientManager;
-import org.tmatesoft.svn.core.wc.SVNWCUtil;
 
 /**
  *
@@ -114,6 +116,13 @@ public class SvnTask extends Task
 	public void addStatus(Status status)
 	{
 		this.addCommand(status);
+	}
+
+
+	/** */
+	public void addRecursiveStatus(RecursiveStatus recursivestatus)
+	{
+		this.addCommand(recursivestatus);
 	}
 
 	/** */
