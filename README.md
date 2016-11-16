@@ -90,74 +90,65 @@ It is a simple wrapper around [svnkit](http://svnkit.com/)
     <copy
         failOnDstExists="true"
         move="false"
-        src="${from.file / from.url}"
-        dst="${to.file / to.url}"
+        src="${from.url}"
+        dst="${to.url}"
         commitMessage="copy by svntask" />
-    </svn>
+</svn>
 ```
 
 
 # delete
-      <svn>
-        <delete
-          force="true"
-          deleteFiles="false"
-          includeDirs="true"
-          dryRun="false"
-          path="/path/to/delete"
-        />
-    
-        <delete
-          force="true"
-          deleteFiles="false"
-          includeDirs="true"
-          dryRun="false">
-          <fileset>
-            ...
-          </fileset>
-        </delete>
-      </svn>
+
+```xml
+<svn>
+    <delete force="true" deleteFiles="false" includeDirs="true" dryRun="false" path="/path/to/delete" />
+    <delete force="true" deleteFiles="false" includeDirs="true" dryRun="false">
+        <fileset>
+            <!-- fileset -->
+        </fileset>
+    </delete>
+</svn>
+```
 
 
 # export
-      <target name="export">
-        <svn>
-          <export workingcopy="/path/to/workingcopy"
-                  exportpath="/path/to/exportdir"/>
-        </svn>
-        <svn username="guest" password="">
-          <export url="http://host/svn/repo"
-                  exportpath="/path/to/exportdir"/>
-        </svn>
-      </target>
+
+```xml
+<svn>
+    <export workingcopy="/path/to/workingcopy" exportpath="/path/to/exportdir" />
+</svn>
+<svn username="guest" password="">
+    <export url="http://host/svn/repo" exportpath="/path/to/exportdir" />
+</svn>
+```
 
 
 # diff
-      <target name="diff">
-        <svn username="guest" password="">
-          <diff workingcopy="/path/to/workingcopy"
-                  outfilename="svn.patch"/>
-        </svn>
-      </target>
+
+```xml
+<svn username="guest" password="">
+    <diff workingcopy="/path/to/workingcopy" outfilename="svn.patch" />
+</svn>
+```
 
 
 # mkdir
-      <svn>
-        <mkdir
-          makeParents="true"
-          path="path/to/create"
-          commitMessage="mkdir by svntask"
-        />
-      </svn>
+
+```xml
+<svn>
+    <mkdir makeParents="true" path="path/to/create" commitMessage="mkdir by svntask" />
+</svn>
+```
 
 
 # unlock
-      <svn>
-        <unlock
-          breakLock="true"
-          includeDirs="true">
-            <fileset>
-              ...
-            </fileset>
-        </unlock>
-      </svn>
+
+```xml
+<svn>
+    <unlock breakLock="true" includeDirs="true">
+        <fileset>
+            <!-- fileset -->
+        </fileset>
+    </unlock>
+</svn>
+```
