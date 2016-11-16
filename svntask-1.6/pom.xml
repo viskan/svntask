@@ -7,8 +7,8 @@
         <artifactId>svntask</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>svntask-1.8</artifactId>
-    <name>Viskan Distanshandel System AB :: svntask :: 1.8</name>
+    <artifactId>svntask-1.6</artifactId>
+    <name>Viskan Distanshandel System AB :: svntask :: 1.6</name>
 
     <dependencies>
         <dependency>

@@ -19,8 +19,8 @@
 
     <modules>
         <module>svntask-core</module>
-        <module>svntask-1.7</module>
         <module>svntask-1.6</module>
+        <module>svntask-1.7</module>
         <module>svntask-1.8</module>
     </modules>
 
