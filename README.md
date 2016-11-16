@@ -1,94 +1,100 @@
-# svntask #
+# svntask
 
-This is a fork of [http://code.google.com/p/svntask/](http://code.google.com/p/svntask/)
-and also takes some extra commands from [https://github.com/chripo/svntask/ ](https://github.com/chripo/svntask/ )
+This is a fork of [opticyclic/svntask](https://github.com/opticyclic/svntask) which in turn is a fork of [svntask](http://code.google.com/p/svntask/) together with some commands from [chripo/svntask](https://github.com/chripo/svntask)
 
 It is a simple wrapper around [svnkit](http://svnkit.com/)
 
-Development on the original project has ended so this was created to provide a way of working with svn 1.7 (and above) via ant until [SvnAnt](http://subclipse.tigris.org/svnant.html) is updated.
 
-Version 1.1.1
+## Available commands
 
-Changelog
-=========
-### 1.1.1 ###
-
-- Added Diff task
-- Bundled with svnkit-1.8.5
-
-### 1.1.0 ###
-
-- Added Export task
-- Bundled with svnkit-1.7.12
-
-### 1.0.9 ###
-- bundled with svnkit-1.7.5-v1
-- update Add command with fileset support (from [https://github.com/chripo/svntask/](https://github.com/chripo/svntask/))
-- add svntask Auth support                (from [https://github.com/chripo/svntask/](https://github.com/chripo/svntask/))
-- added new commands                      (from [https://github.com/chripo/svntask/](https://github.com/chripo/svntask/))
-
-Available commands
-==================
-- Add
-- Checkout
-- Commit
-- Diff
-- Export
-- Info
-- Log
-- Ls
-- Status
-- Switch
-- Update
-- Cleanup
-- Copy
-- Delete
-- Mkdir
-- Unlock
-
-Install
-=======
-Unzip the dist to a directory in your project.
-Unfortunately svnkit 1.7 (and above) comes with extra dependencies so it is no longer just one jar.
+ - add
+ - checkout
+ - commit
+ - diff
+ - export
+ - info
+ - log
+ - ls
+ - status
+ - switch
+ - update
+ - cleanup
+ - copy
+ - delete
+ - mkdir
+ - unlock
 
 
+## Usage
 
-TaskDef
---------------
-      <path id="svnant.classpth">
-        <fileset dir="lib/build/svnant">
-          <include name="*.jar"/>
-        </fileset>
-      </path>
-      <taskdef name="svn" classname="com.googlecode.svntask.SvnTask" classpathref="svnant.classpth"/>
+### Maven
+
+`pom.xml`:
+```xml
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-antrun-plugin</artifactId>
+    <version>${maven-antrun-plugin.version}</version>
+    <executions>
+        <execution>
+            <id>generate-patch</id>
+            <phase>generate-sources</phase>
+            <goals>
+                <goal>run</goal>
+            </goals>
+            <configuration>
+                <target>
+                    <taskdef resource="svntask.xml" classpathref="maven.plugin.classpath"/>
+                    <svn username="${tomcat.username}" password="${tomcat.password}">
+                        <diff workingcopy="/path/to/workingcopy" outfilename="svn.patch" />
+                    </svn>
+                </target>
+            </configuration>
+        </execution>
+    </executions>
+    <dependencies>
+        <dependency>
+            <groupId>com.viskan</groupId>
+            <artifactId>svntask-1.8</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</plugin>
+```
 
 
-Authentication
---------------
-    <svn username="user"  password="password" >
-      ... commands ...
+### Authentication
+
+```xml
+    <svn username="user" password="password">
+        <!-- Commands -->
     </svn>
+```
 
 
-Commands
-------------
+### Commands
 
-# cleanup
-      <svn>
-        <cleanup path="${project.src}" deleteWCProperties="false"/>
-      </svn>
+#### cleanup
+
+```xml
+<svn>
+    <cleanup path="${project.src}" deleteWCProperties="false" />
+</svn>
+```
 
 
-# copy
-      <svn>
-        <copy
-          failOnDstExists="true"
-          move="false"
-          src="${from.file / from.url}"
-          dst="${to.file / to.url}"
-          commitMessage="copy by svntask"
-        />
-      </svn>
+#### copy
+
+```xml
+<svn>
+    <copy
+        failOnDstExists="true"
+        move="false"
+        src="${from.file / from.url}"
+        dst="${to.file / to.url}"
+        commitMessage="copy by svntask" />
+    </svn>
+```
 
 
 # delete
