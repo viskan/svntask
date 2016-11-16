@@ -8,7 +8,7 @@
         <version>4</version>
     </parent>
     <artifactId>svntask</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <name>Viskan Distanshandel System AB :: svntask</name>
     <description>Parent for the svntask projects.</description>
@@ -44,7 +44,7 @@
         <url>https://github.com/viskan/svntask</url>
         <connection>scm:git:git://github.com/viskan/svntask.git</connection>
         <developerConnection>scm:git:git@github.com:viskan/svntask.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>v1.0.0</tag>
     </scm>
 
     <distributionManagement>
