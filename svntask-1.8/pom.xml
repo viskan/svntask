@@ -9,6 +9,7 @@
     </parent>
     <artifactId>svntask-1.8</artifactId>
     <name>Viskan Distanshandel System AB :: svntask :: 1.8</name>
+    <description>Packages svntask with dependencies for SVN 1.8.</description>
 
     <dependencies>
         <dependency>

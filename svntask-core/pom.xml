@@ -9,6 +9,7 @@
     </parent>
     <artifactId>svntask-core</artifactId>
     <name>Viskan Distanshandel System AB :: svntask :: Core</name>
+    <description>Contains the actual code for the svntask project.</description>
 
     <dependencies>
         <dependency>
