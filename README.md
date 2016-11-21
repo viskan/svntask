@@ -56,7 +56,7 @@ It is a simple wrapper around [svnkit](http://svnkit.com/)
         <dependency>
             <groupId>com.viskan</groupId>
             <artifactId>svntask-1.8</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
 </plugin>
