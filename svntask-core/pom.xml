@@ -8,7 +8,7 @@
         <version>1.1.0-SNAPSHOT</version>
     </parent>
     <artifactId>svntask-core</artifactId>
-    <name>Viskan Distanshandel System AB :: svntask :: Core</name>
+    <name>Viskan System AB :: svntask :: Core</name>
     <description>Contains the actual code for the svntask project.</description>
 
     <dependencies>
