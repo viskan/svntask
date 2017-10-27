@@ -10,12 +10,12 @@
     <artifactId>svntask</artifactId>
     <version>1.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>Viskan Distanshandel System AB :: svntask</name>
+    <name>Viskan System AB :: svntask</name>
     <description>Parent for the svntask projects.</description>
     <url>https://github.com/viskan/svntask</url>
 
     <organization>
-        <name>Viskan Distanshandel System AB</name>
+        <name>Viskan System AB</name>
         <url>http://viskan.com</url>
     </organization>
 

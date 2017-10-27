@@ -8,7 +8,7 @@
         <version>1.1.0-SNAPSHOT</version>
     </parent>
     <artifactId>svntask-1.6</artifactId>
-    <name>Viskan Distanshandel System AB :: svntask :: 1.6</name>
+    <name>Viskan System AB :: svntask :: 1.6</name>
     <description>Packages svntask with dependencies for SVN 1.6.</description>
 
     <dependencies>
